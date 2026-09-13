@@ -1,0 +1,19 @@
+namespace Lab2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var productsList = ProductService.GetProducts();
+            foreach (var product in productsList)
+            {
+                lstProducts.Items.Add(product.GetDisplayText("; "));
+            }
+        }
+    }
+}
